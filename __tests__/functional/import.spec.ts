@@ -10,4 +10,8 @@ describe('Import', () => {
 
         await mongoose.connect(process.env.MONGO_URL);
     });
+
+    afterAll(async () => {
+        await mongoose.connection.close();
+    })
 });
