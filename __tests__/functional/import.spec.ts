@@ -14,4 +14,8 @@ describe('Import', () => {
     afterAll(async () => {
         await mongoose.connection.close();
     })
+
+    beforeEach(async () => {
+        await Contact.deleteMany({});
+    });
 });
